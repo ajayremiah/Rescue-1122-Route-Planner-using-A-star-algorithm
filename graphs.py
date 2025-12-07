@@ -121,6 +121,7 @@ def plot_path_length_comparison(sizes, pl_dijkstra, pl_astar, pl_greedy):
     ax.grid(True, which='major', linestyle='-', linewidth=0.5)
     ax.grid(True, which='minor', linestyle=':', linewidth=0.3)
     
+    
     plt.tight_layout()
     plt.savefig('path_length_comparison.png', dpi=150)
     plt.show()
