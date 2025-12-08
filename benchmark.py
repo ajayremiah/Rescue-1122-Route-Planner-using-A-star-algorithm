@@ -2,6 +2,7 @@ import time
 import random
 from queue import PriorityQueue
 
+
 # --- SETUP ---
 class Node:
     def __init__(self, row, col):
@@ -122,6 +123,14 @@ def run_experiment():
     # Varying grid sizes
     sizes = [50, 100, 150, 200, 250] 
     
+    # storage for storing plotting results 
+    results = {
+        'sizes': sizes,
+        'dijkstra': {'time': [], 'nodes_visited': [], 'path_length': []},
+        'astar': {'time': [], 'nodes_visited': [], 'path_length': []},
+        'greedy': {'time': [], 'nodes_visited': [], 'path_length': []}
+    }
+    
     for size in sizes:
         valid_trials = 0
         while valid_trials < 1: 
@@ -153,6 +162,19 @@ def run_experiment():
             found_g, visited_g, len_g = run_search(grid, start, end, "Greedy")
             t1 = time.perf_counter()
             time_g = (t1 - t0) * 1000
+            
+            # stores data
+            results['dijkstra']['time'].append(time_d)
+            results['dijkstra']['nodes_visited'].append(visited_d)              
+            results['dijkstra']['path_length'].append(len_d)
+
+            results['astar']['time'].append(time_a)
+            results['astar']['nodes_visited'].append(visited_a)              
+            results['astar']['path_length'].append(len_a)
+
+            results['greedy']['time'].append(time_g)
+            results['greedy']['nodes_visited'].append(visited_g)              
+            results['greedy']['path_length'].append(len_g)
 
             # --- PRINT ROWS ---
             # Dijkstra
@@ -167,6 +189,7 @@ def run_experiment():
             print(separator)
             
             valid_trials += 1
+    return results  
 
 if __name__ == "__main__":
     run_experiment()
