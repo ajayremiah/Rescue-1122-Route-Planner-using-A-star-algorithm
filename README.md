@@ -1,13 +1,19 @@
-# Rescue-1122-Route-Planner-using-A-star-algorithm
-Rescue 1122 Route Planner is an AI project which implements the A-star algorithm using Python and the simulation is done using Pygame.
-Essentially, the user defines a start and goal in a 2D grid along with the several blockages/hurdles placed all over the grid. The program is written in Python and uses the A star algorithm to find the optimal path from the start to the goal if it exits. Pygame is used to simulate the entire program.
+# Rescue 1122 Route Planner using A* Algorithm
 
-In the simulation:
-start - orange
-goal - turqoise
-obstacles - black
-open nodes - green
-closed nodes - red
-optimal path - yellow
+Rescue 1122 Route Planner is an Artificial Intelligence project that implements the A* (A-Star) pathfinding algorithm using Python. The project features an interactive simulation built with Pygame, performance benchmarking tools, and data visualization for algorithm analysis.
 
-Algorithm start when [space] key pressed.
+Essentially, the user defines a start point, multiple waypoints, and a goal on a 2D grid, along with obstacles. The program calculates the optimal path traversing all points in order.
+## Node Color Legend
+  🟠 - starting point of the rescue unit
+  🔵 - final destination
+  🟣 - intermediate stops the path must visit
+  ⚫ - blocked areas that cannot be traversed
+  🟢 - nodes currently being considered for exploration (open)
+  🔴 - nodes that have already been visited (closed)
+  🟡 - calculated optimal route
+
+## File Structure
+
+* `Simulation.py`: main application containing the Pygame simulation and A* implementation.
+* `benchmark.py`: script to run automated performance tests on the algorithm without the graphic overhead.
+* `graphs.py`: generates visual plots (using Matplotlib) based on the data collected from benchmarking.
