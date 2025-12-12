@@ -4,13 +4,13 @@ Rescue 1122 Route Planner is an Artificial Intelligence project that implements 
 
 Essentially, the user defines a start point, multiple waypoints, and a goal on a 2D grid, along with obstacles. The program calculates the optimal path traversing all points in order.
 ## Node Color Legend
-  🟠 - starting point of the rescue unit
-  🔵 - final destination
-  🟣 - intermediate stops the path must visit
-  ⚫ - blocked areas that cannot be traversed
-  🟢 - nodes currently being considered for exploration (open)
-  🔴 - nodes that have already been visited (closed)
-  🟡 - calculated optimal route
+  🟠(red) - starting point of the rescue unit,
+  🔵(turqouise) - final destination,
+  🟣(purple) - intermediate stops the path must visit,
+  ⚫(black) - blocked areas that cannot be traversed,
+  🟢(green) - nodes currently being considered for exploration (open),
+  🔴(red) - nodes that have already been visited (closed), and
+  🟡(yellow) - calculated optimal route
 
 ## File Structure
 
